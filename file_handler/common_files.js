@@ -10,9 +10,10 @@ module.exports = {
         })
     },
     sendMail: function (to, text, cb) {
-
+        console.log(text)
         // create reusable transporter object using the default SMTP transport
-        var transporter = nodemailer.createTransport(nodemailer.createTransport({
+        var transporter = nodemailer.createTransport({
+
             host: 'smtp.gmail.com',
             port: 465,
             secure: true,
@@ -20,7 +21,7 @@ module.exports = {
                 user: 'healthfyp@gmail.com',
                 pass: 'sensors1'
             }
-        }));
+        });
 
         // setup e-mail data with unicode symbols
         var mailOptions = {

@@ -18,7 +18,7 @@ db.on('error', function (error) {
 db.once('open', function () {
     console.log("connected");
 });
-app.use(body_parser.json());
+app.use(body_parser.json({limit:'50mb'}));
 app.use('/api/v1/user/',user_routes);
 app.use(body_parser.urlencoded({extended: false}));
 app.listen(3001, function () {
